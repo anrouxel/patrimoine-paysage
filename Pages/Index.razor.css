@@ -1,4 +1,4 @@
-.carousel-item, #home_carousel {
+.carousel-item, #home {
     height: calc(100vh - 3rem);
 }
 
