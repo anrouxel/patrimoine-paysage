@@ -1,0 +1,13 @@
+.carousel-item, #carouselExampleCaptions {
+    height: calc(100vh - 3rem);
+}
+
+.carousel-item > img {
+    object-fit: cover;
+    object-position: 50%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
