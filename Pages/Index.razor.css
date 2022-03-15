@@ -1,0 +1,7 @@
+.carousel-item, #carouselExampleCaptions {
+    height: calc(100vh - 3rem);
+}
+
+.carousel-item > img {
+    object-fit: cover;
+}
