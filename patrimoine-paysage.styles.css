@@ -1,0 +1,8 @@
+/* /Pages/Index.razor.rz.scp.css */
+.carousel-item[b-3ahe6nqv6w], #carouselExampleCaptions[b-3ahe6nqv6w] {
+    height: calc(100vh - 3rem);
+}
+
+.carousel-item > img[b-3ahe6nqv6w] {
+    object-fit: cover;
+}
