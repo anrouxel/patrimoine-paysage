@@ -1,0 +1,13 @@
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+img, #carouselExampleCaptions {
+    height: calc(100vh - 3rem);
+}
+
+img {
+    object-position: 50%;
+    object-fit: cover;
+}
