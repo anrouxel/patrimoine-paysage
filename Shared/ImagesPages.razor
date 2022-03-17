@@ -1,6 +1,18 @@
-﻿
+﻿<div class="carousel-item active img">
+    <img src="images/@Image" class="d-block w-100 img" alt="...">
+    <div class="carousel-caption d-none d-md-block">
+        <h1>@Title</h1>
+        <p>@Description</p>
+    </div>
+</div>
 
 @code {
     [Parameter]
-    public string? Image {get; set;}
+    public string? Image { get; set; }
+
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? Description { get; set; }
 }
