@@ -21,3 +21,8 @@ img[b-etonpiciui] {
     object-fit: cover;
     object-position: 50%;
 }
+
+.carousel-caption[b-etonpiciui] {
+    height: calc(100% - 1.25rem * 2);
+    width: 100%;
+}
