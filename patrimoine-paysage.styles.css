@@ -1,18 +1,13 @@
 /* /Pages/Chateau_des_ducs_de_Bretagne.razor.rz.scp.css */
-body[b-1n21gghmww]{
-    margin-top:20px;
-    color: #bcd0f7;
-    background: #1A233A;
-}
 .timeline[b-1n21gghmww] {
     position: relative;
-    background: #272e48;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
     padding: 5rem;
     margin: 0 auto 1rem auto;
     overflow: hidden;
+    border: 2px dashed #4b546f;
 }
 .timeline[b-1n21gghmww]:after {
     content: "";
@@ -36,7 +31,7 @@ body[b-1n21gghmww]{
     top: 15px;
     text-align: right;
     margin-right: 20px;
-    color: #bcd0f7;
+    color: black;
     font-size: 1.5rem;
 }
 .timeline-row .timeline-time small[b-1n21gghmww] {
@@ -46,7 +41,7 @@ body[b-1n21gghmww]{
 .timeline-row .timeline-content[b-1n21gghmww] {
     position: relative;
     padding: 20px 30px;
-    background: #1a233a;
+    background: #364670;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
@@ -62,7 +57,7 @@ body[b-1n21gghmww]{
     top: 20px;
     height: 16px;
     width: 16px;
-    background: #1a233a;
+    background: #364670;
 }
 .timeline-row .timeline-content[b-1n21gghmww]:before {
     content: "";
@@ -75,7 +70,7 @@ body[b-1n21gghmww]{
     -moz-border-radius: 100px;
     border-radius: 100px;
     z-index: 10;
-    background: #272e48;
+    background: #fff;
     border: 2px dashed #4b546f;
 }
 .timeline-row .timeline-content h4[b-1n21gghmww] {
@@ -220,4 +215,8 @@ img[b-etonpiciui] {
 .carousel-caption[b-etonpiciui] {
     height: calc(100% - 1.25rem * 2);
     width: 100%;
+}
+
+.divider[b-etonpiciui] {
+    height: 3rem;
 }
