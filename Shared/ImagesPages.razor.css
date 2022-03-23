@@ -11,3 +11,7 @@ img {
     height: calc(100% - 1.25rem * 2);
     width: 100%;
 }
+
+.divider {
+    height: 3rem;
+}
