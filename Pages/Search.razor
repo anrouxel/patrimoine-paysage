@@ -1,0 +1,97 @@
+﻿@page "/search"
+@using System.Net.Http
+@using System.Xml.Linq
+@inject HttpClient Http
+
+<div class="container">
+    <div class="divider"></div>
+    <h1>Search</h1>
+    <BlazoredTypeahead SearchMethod="SearchItem" @bind-Value="Selected">
+        <SelectedTemplate>
+            @context?.site
+        </SelectedTemplate>
+        <ResultTemplate>
+            @context.site (@context.date_inscribed)
+        </ResultTemplate>
+    </BlazoredTypeahead>
+
+    <div class="divider"></div>
+    @if (Selected != null)
+    {
+        <ImagesPages Image="IMG_20220321_152210.jpg" Title="@Selected.site" Description="@Selected.states" />
+        <h2>Description :</h2>
+        @Selected.short_description
+        @Selected.justification
+        <p>Inscrit au patrimione de l'unesco en @Selected.date_inscribed</p>
+        <p>Source : @Selected.http_url</p>
+    }
+</div>
+
+@code {
+    private UNESCO? Selected;
+    private XElement? doc;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await Http.GetStringAsync("sample-data/whc.unesco.org.xml");
+        doc = XElement.Parse(response);
+    }
+    private async Task<IEnumerable<UNESCO>> SearchItem(string searchText)
+    {
+        var query = (from item in doc?.Descendants("row")
+                     where ((string)item.Element("site")!).Contains(searchText)
+                     || ((string)item.Element("short_description")!).Contains(searchText)
+                     || ((string)item.Element("justification")!).Contains(searchText)
+                     select new UNESCO
+                     {
+                         category = item.Element("category")!.Value,
+                         criteria_txt = item.Element("criteria_txt")!.Value,
+                         danger = item.Element("danger")!.Value,
+                         date_inscribed = item.Element("date_inscribed")!.Value,
+                         extension = item.Element("extension")!.Value,
+                         http_url = item.Element("http_url")!.Value,
+                         id_number = item.Element("id_number")!.Value,
+                         image_url = item.Element("image_url")!.Value,
+                         iso_code = item.Element("iso_code")!.Value,
+                         justification = item.Element("justification")!.Value,
+                         latitude = item.Element("latitude")!.Value,
+                         location = item.Element("location")!.Value,
+                         longitude = item.Element("longitude")!.Value,
+                         region = item.Element("region")!.Value,
+                         revision = item.Element("revision")!.Value,
+                         secondary_dates = item.Element("secondary_dates")!.Value,
+                         short_description = item.Element("short_description")!.Value,
+                         site = item.Element("site")!.Value,
+                         states = item.Element("states")!.Value,
+                         transboundary = item.Element("transboundary")!.Value,
+                         unique_number = item.Element("unique_number")!.Value
+                     });
+        return await Task.FromResult(query);
+    }
+
+    public class UNESCO
+    {
+        public string? category { get; set; }
+        public string? criteria_txt { get; set; }
+        public string? danger { get; set; }
+        public string? date_inscribed { get; set; }
+        public string? extension { get; set; }
+        public string? http_url { get; set; }
+        public string? id_number { get; set; }
+        public string? image_url { get; set; }
+        public string? iso_code { get; set; }
+        public string? justification { get; set; }
+        public string? latitude { get; set; }
+        public string? location { get; set; }
+        public string? longitude { get; set; }
+        public string? region { get; set; }
+        public string? revision { get; set; }
+        public string? secondary_dates { get; set; }
+        public string? short_description { get; set; }
+        public string? site { get; set; }
+        public string? states { get; set; }
+        public string? transboundary { get; set; }
+        public string? unique_number { get; set; }
+    }
+
+}
