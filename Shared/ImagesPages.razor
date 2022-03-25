@@ -1,7 +1,7 @@
 ﻿<div class="container">
     <div class="carousel slide active img">
         <img src="images/@Image" class="d-block w-100 img rounded" alt="...">
-        <div class="position-absolute top-50 start-50 translate-middle text-light container text-center">
+        <div class="position-absolute top-50 start-50 translate-middle text-light container text-center @Color">
             <h1>@Title</h1>
             <p>@Description</p>
         </div>
@@ -18,4 +18,7 @@
 
     [Parameter]
     public string? Description { get; set; }
+
+    [Parameter]
+    public string? Color { get; set; }
 }

@@ -21,9 +21,12 @@
         <ImagesPages Image="IMG_20220321_152210.jpg" Title="@Selected.site" Description="@Selected.states" />
         <h2>Description :</h2>
         @Selected.short_description
+        <div class="divider"></div>
         @Selected.justification
+        <div class="divider"></div>
         <p>Inscrit au patrimione de l'unesco en @Selected.date_inscribed</p>
-        <p>Source : @Selected.http_url</p>
+        <div class="divider"></div>
+        <p>Source : <a href="@Selected.http_url">@Selected.http_url</a></p>
     }
 </div>
 
